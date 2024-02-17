@@ -6,7 +6,7 @@
 /*   By: aperron <aperron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 11:05:32 by aperron           #+#    #+#             */
-/*   Updated: 2024/02/15 13:53:43 by aperron          ###   ########.fr       */
+/*   Updated: 2024/02/17 19:11:22 by aperron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include "../libft/libft.h"
 # include "structure.h"
-# include "constants.h"
 
 /* to write, read, close, access, pipe, dup, dup2, execve, fork */
 # include <unistd.h>
@@ -38,5 +37,7 @@
 # include <stdio.h>
 
 void				exit_with_error(char *message);
+
+void				check_input(int argc, const char **argv);
 
 #endif

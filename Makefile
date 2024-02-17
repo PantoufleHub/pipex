@@ -6,11 +6,9 @@
 #    By: aperron <aperron@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/11 11:01:58 by aperron           #+#    #+#              #
-#    Updated: 2024/02/15 13:58:08 by aperron          ###   ########.fr        #
+#    Updated: 2024/02/17 19:16:23 by aperron          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
-include libft/Makefile
 
 ########################### VARIABLES ############################
 
@@ -18,7 +16,7 @@ NAME		= pipex
 
 SRC_FOLDER	= ./src/
 
-SRCS_BLANK	= main error
+SRCS_BLANK	= main error input commands
 
 SRCS		= $(addsuffix .c, $(addprefix $(SRC_FOLDER), $(SRCS_BLANK)))
 
@@ -36,7 +34,7 @@ TO_CLEAN	= *.dSYM *.o
 all: $(NAME) run
 
 $(NAME): $(SRCS)
-	$(CC) $(FLAGS) $^ -L./libft -lft -o $@
+	$(CC) $(FLAGS) $(SRCS) -L./libft -lft -o $@
 
 run:
 	@./$(NAME)

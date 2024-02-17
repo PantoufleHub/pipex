@@ -6,7 +6,7 @@
 /*   By: aperron <aperron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 11:04:43 by aperron           #+#    #+#             */
-/*   Updated: 2024/02/15 16:13:23 by aperron          ###   ########.fr       */
+/*   Updated: 2024/02/17 18:41:16 by aperron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,20 @@
 
 int	main(int argc, const char *argv[], char *envp[])
 {
-	t_pipex	*pipex;
-	
-	if (argv[0] && envp[0])
-		pipex = NULL;
+	// t_pipex	*pipex;
 
-	if (argc != 5)
-		exit_with_error(ERR_ARGS);
-	char *path = "/bin/cat";
-	char* arg1 = "/Users/aperron/Desktop/42/pipex/test.txt";
-	char *args[] = { path, arg1, NULL};
-	execve(path, args, envp);
+	check_input(argc, argv);
+
+	if (envp[0])
+		return (0);
 	return (0);
 }
 
+	// char *path = "/bin/cat";
+	// char* arg1 = "/Users/aperron/Desktop/42/pipex/test.txt";
+	// char *args[] = { path, arg1, NULL};
+	// execve(path, args, envp);
+	
 	// int index = 0;
 	// while (envp[index])
 	// {
