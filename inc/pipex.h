@@ -6,7 +6,7 @@
 /*   By: aperron <aperron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 11:05:32 by aperron           #+#    #+#             */
-/*   Updated: 2024/02/17 19:11:22 by aperron          ###   ########.fr       */
+/*   Updated: 2024/02/18 02:17:10 by aperron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,28 +16,25 @@
 # include "../libft/libft.h"
 # include "structure.h"
 
-/* to write, read, close, access, pipe, dup, dup2, execve, fork */
-# include <unistd.h>
+# include <fcntl.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <string.h>
 # include <sys/types.h>
 # include <sys/uio.h>
-
-/* malloc, free, exit */
-# include <stdlib.h>
-
-/* open, unlink */
-# include <fcntl.h>
-
-/* waitpid, wait */
 # include <sys/wait.h>
+# include <unistd.h>
 
-/* strerror */
-# include <string.h>
+void				check_input(int argc, char **argv);
 
-/*to perror*/
-# include <stdio.h>
+void				close_pipes(t_pipex *pipex);
+
+void				cmd1(t_pipex pipex, char *argv[], char *envp[]);
+
+void				cmd2(t_pipex pipex, char *argv[], char *envp[]);
 
 void				exit_with_error(char *message);
 
-void				check_input(int argc, const char **argv);
+t_pipex				init_pipex(char *argv[], char *envp[]);
 
 #endif

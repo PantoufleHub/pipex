@@ -6,11 +6,17 @@
 /*   By: aperron <aperron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 13:46:13 by aperron           #+#    #+#             */
-/*   Updated: 2024/02/17 19:15:47 by aperron          ###   ########.fr       */
+/*   Updated: 2024/02/17 22:39:17 by aperron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/pipex.h"
+
+void	close_pipes(t_pipex *pipex)
+{
+	close(pipex->paip[0]);
+	close(pipex->paip[1]);
+}
 
 void	exit_with_error(char *message)
 {

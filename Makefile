@@ -6,7 +6,7 @@
 #    By: aperron <aperron@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/11 11:01:58 by aperron           #+#    #+#              #
-#    Updated: 2024/02/17 19:16:23 by aperron          ###   ########.fr        #
+#    Updated: 2024/02/18 00:49:30 by aperron          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ NAME		= pipex
 
 SRC_FOLDER	= ./src/
 
-SRCS_BLANK	= main error input commands
+SRCS_BLANK	= main error input commands init
 
 SRCS		= $(addsuffix .c, $(addprefix $(SRC_FOLDER), $(SRCS_BLANK)))
 
