@@ -6,7 +6,7 @@
 /*   By: aperron <aperron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 13:36:49 by aperron           #+#    #+#             */
-/*   Updated: 2024/02/17 22:26:38 by aperron          ###   ########.fr       */
+/*   Updated: 2024/02/18 11:04:43 by aperron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct s_pipex
 	pid_t	pid2;
 	char	**paths;
 	int		paip[2];
+	char	**argv;
 }	t_pipex;
 
 #endif

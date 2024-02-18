@@ -6,7 +6,7 @@
 /*   By: aperron <aperron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 20:25:51 by aperron           #+#    #+#             */
-/*   Updated: 2024/02/18 02:37:36 by aperron          ###   ########.fr       */
+/*   Updated: 2024/02/18 11:10:02 by aperron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,10 @@ t_pipex	init_pipex(char *argv[], char *envp[])
 {
 	t_pipex	pipex;
 
+	pipex.argv = argv;
 	pipex.paths = get_paths(envp);
 	pipex.file1 = open(argv[1], O_RDONLY);
-	if (pipex.file1 < 0)
-		exit_with_error("Unable to open file 1");
-	pipex.file2 = open(argv[4], O_CREAT | O_RDWR | O_TRUNC);
-	if (pipex.file2 < 0)
-		exit_with_error("Unable to open file 2");
+	pipex.file2 = open(argv[4], O_CREAT | O_WRONLY | O_TRUNC);
 	if (pipe(pipex.paip) < 0)
 		exit_with_error("Unable to create pipe");
 	return (pipex);
